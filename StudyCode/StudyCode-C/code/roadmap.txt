@@ -1,0 +1,88 @@
+🚀 Roadmap Build "vi-like editor with neovim modes" in C
+🧱 PHASE 0 – Setup căn bản
+Mục tiêu: Làm việc được với terminal, không echo, đọc phím theo thời gian thực
+ Setup terminal raw mode (dùng termios.h)
+ Tạo read_key() xử lý được:
+Phím ASCII
+Escape sequences (arrow, home, end, etc.)
+ Define #define chuẩn cho các phím
+
+🎥 PHASE 1 – Buffer & Hiển thị
+Mục tiêu: Có thể hiển thị nội dung, cursor di chuyển, hiển thị line number + EndOfBuffer
+ Tạo struct EditorBuffer chứa:
+Mảng con trỏ dòng char *lines[MAX_LINES]
+Số dòng thực tế, số dòng hiển thị
+ In toàn bộ buffer ra terminal mỗi lần update
+Dùng \033[H để đặt lại con trỏ về (0,0)
+ Hiển thị line number (ví dụ: 1 int main())
+ In ~ cuối file (EndOfBuffer)
+ Tính toán vị trí con trỏ (cursor_x, cursor_y)
+ Dùng \033[row;colH để di chuyển con trỏ
+ Có thể scroll nếu số dòng vượt chiều cao terminal
+
+⌨️ PHASE 2 – NORMAL mode
+Mục tiêu: Di chuyển được con trỏ, chuyển chế độ, điều hướng như Vim
+ Di chuyển bằng h, j, k, l
+ Di chuyển bằng arrow keys
+ Nhận biết i, v, : để chuyển mode
+ Hiển thị tên chế độ dưới dòng cuối cùng (status bar)
+
+✍️ PHASE 3 – INSERT mode
+Mục tiêu: Gõ được chữ, Enter xuống dòng, Backspace xóa ký tự
+ Gõ chữ vào buffer tại vị trí con trỏ
+ Enter tạo dòng mới, shift các dòng xuống
+ Backspace xóa ký tự trước
+ ESC để quay về NORMAL
+
+📐 PHASE 4 – VISUAL mode (cơ bản)
+Mục tiêu: Chọn vùng văn bản, highlight vùng chọn
+ Khi vào VISUAL, lưu tọa độ bắt đầu
+ Khi di chuyển con trỏ, highlight vùng chọn
+ Có thể thoát bằng ESC
+ (Tùy chọn) Cho phép copy vùng chọn vào clipboard ảo
+
+💾 PHASE 5 – File I/O
+Mục tiêu: Load file, lưu file
+ Hàm mở file và đọc từng dòng vào buffer
+ Hàm lưu nội dung buffer vào file
+ Gõ :w trong NORMAL để lưu
+ Gõ :q, :wq, :q! để thoát/lưu & thoát
+
+🔨 PHASE 6 – Polish
+Mục tiêu: Hoàn thiện trải nghiệm
+ Status bar: hiển thị chế độ, tên file, vị trí con trỏ
+ Tự động resize buffer nếu cần
+ Highlight dòng hiện tại (optional)
+ Syntax highlight? (tùy, nâng cao)
+ Undo/Redo? (nâng cao)
+
+ 🧠 Kiến thức cần có:
+Terminal raw mode (termios)
+Xử lý escape sequences
+Mảng con trỏ (char *lines[])
+Con trỏ chuỗi
+Xử lý input/output không blocking
+Vẽ màn hình thủ công (giống game console C)
+File IO (fopen, fgets, fputs, fclose)
+
+🔥 Tips mindset hacker:
+Mỗi lần nhấn phím là: read_key() → xử lý → clear screen → redraw all
+Con trỏ không tự nhảy — mày phải dùng \033[row;colH để tự set
+Mọi thứ phải tính toán: tọa độ, chiều cao terminal, chiều dài dòng
+RAM chính là nơi lưu buffer, file chỉ là nơi "xuất bản"
+
+
+
+ ---------------------------------------------------------------------------------------------------
+
+
+ 
+PHASE	    DESCRIPTION
+PHASE 0	    Terminal setup with termios: raw mode, disable echo, real-time key reading.
+PHASE 1	    Create in-memory text buffer. Render to terminal with line numbers and ~.
+PHASE 2	    Implement NORMAL mode: h, j, k, l navigation and mode switching.
+PHASE 3	    Implement INSERT mode: typing characters, Enter for newline, Backspace support.
+PHASE 4	    Implement VISUAL mode: select text regions, highlight visually.
+PHASE 5	    File I/O: open file to buffer, write buffer to file (:w, :q, :wq).
+PHASE 6	    Polish: add status bar, cursor highlight, resize support, optional syntax highlight.
+

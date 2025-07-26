@@ -1,0 +1,13 @@
+int:                    %d, %i
+long int:               %ld
+long long int:          %lld
+unsigned int:           %u
+unsigned long int:      %lu
+unsigned long long int: %llu
+float:                  %f
+double:                 %lf
+char:                   %c
+string(char*):          %s
+hexa:                   %x, %X
+octal:                  %o
+pointer:                %p

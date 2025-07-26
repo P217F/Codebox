@@ -1,0 +1,10 @@
+Format:
+------------------------------
+(name lib of func) <func>
+<Desc>
+------------------------------
+
+--------------------------------------------------------------------------
+(sys/ioctl.h) int ioctl(int fd, unsigned long request, ...)
+ The (Input/Output Control) system call in Linux is a versatile mechanism that allows user-space programs to communicate with device drivers. It provides a way to send device-specific commands or perform operations that are not covered by standard system calls like or ioctlreadwrite.
+--------------------------------------------------------------------------

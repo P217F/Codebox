@@ -1,0 +1,30 @@
+- Built-in Function in python, no need to import lib
+input(prompt): Get input from keyboard
+print(object(s), sep=separator, end=end, file=file, flush=flush): Print to screen
+type(object, bases, dict): Check type of data
+#: Comment in one line
+"""something""": Comment many line
+if <condition>:             |
+    <code>                  |
+elif <condition>:           |    Condition
+    <code>                  |
+else:                       |
+    <code>                  |
+
+while <condition>:          |    while loop
+    <code>
+else:                       |    else or not
+    <code>
+
+for <var> in <object or string>:    |    for loop
+    <code>
+else:                               |    else or not
+    <code>
+
+range(begin, end-1, step): range funtion
+break: stop loop
+continue: skip this loop and continue to next loop
+pass: 
+round(number, digits): round the numbers
+lambda arguments : expression
+
