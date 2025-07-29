@@ -1,16 +1,16 @@
 /*
- * SLE - The Super Lightweight and Simple Editor Code that less than 5000 lines of code. Run fast, effective code, save storage.
+ * CLEIT - The Lightweight Editor Code for C++ that less than 10000 lines of code. Run fast, effective code, save storage.
  * Options:
- * +) Purpose: Super lightweight, super simple, no plugins, no treesitter, fast, saving resources 
- * +) Line of codes: 5000 lines
- * +) Storage: from 300KB -> less than 5MB
+ * +) Purpose: Lightweight, No plugins, No treesitter, Saving resources, Effective 
+ * +) Line of codes: < 10000 lines
+ * +) Storage: from 50MB -> less than 100MB
  * +) Dependent system and environment: Yes
- * +) RAM: 1MB -> 50MB(if open big file with more 10000 lines of code)
+ * +) RAM: 80MB -> 200MB(if open big file with more 10000 lines of code)
  * +) Who use: senior coder, system developer, kernel developer, low level developer, ... (not for beginners and high level programming)
- * +) Support language: Supports almost all languages at a basic level, the rest depends on the language used to build this software.
- * +) Language to build software: Python, C, C++, Rust, Assembly, ...(other 5+ language)
+ * +) Support language: Almost C++, rest C.
+ * +) Language to build software: C, C++
  * +) Cost: Free
- * +) Requests: Terminal, linux, macos, window. No support for termux on Android.
+ * +) Requests: Terminal, Linux, Macos, Window. No support for termux on Android.
  * +) Author: Allen Eveland, 2025
  * +) Github: https://github.com/P217F/Src_Code.git
 */

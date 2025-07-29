@@ -1,6 +1,5 @@
-/* Sle -- A very simple editor in less than 5000 lines of code (as counted
- *         by "cloc"). Does not depend on libcurses, directly emits VT100
- *         escapes on the terminal.
+/* CLEIT -- A Lightweight Editor Code in less than 10000 lines of code (as counted
+ *         by "cloc").
  *
  * -----------------------------------------------------------------------
  *
