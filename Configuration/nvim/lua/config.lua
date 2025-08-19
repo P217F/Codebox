@@ -16,7 +16,7 @@ vim.opt.smartindent = true
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 
 -- Search
 vim.opt.ignorecase = true
@@ -40,16 +40,18 @@ vim.keymap.set('n', 'w', ':w<CR>')
 vim.keymap.set('n', 'q', ':q<CR>')
 vim.keymap.set('n', 'qq',':q!<CR>')
 vim.keymap.set('n', 'wqq', ':wq!<CR>')
+vim.keymap.set('n', 't', ':term<CR>')
 
 -- Others
 vim.opt.fillchars = { eob=" " }
 vim.opt.shortmess:append("sI")
 vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.laststatus = 0
+vim.opt.cmdheight = 0
 
--- Require
+-- Require package
 require("colorscheme")
 require("pair")
 require("folder_tree")
 require("lsp_config")
-require("nvim_lualine")
 require("telescope_conf")
