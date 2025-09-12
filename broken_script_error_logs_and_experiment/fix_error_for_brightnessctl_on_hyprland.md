@@ -1,1 +1,0 @@
-## How to fixing brightnessctl on Hyprland
